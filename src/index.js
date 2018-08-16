@@ -1,28 +1,31 @@
 class People {
-    constructor(name, age) {
+    constructor(name, house) {
         this.name = name;
-        this.age = age;
-    }
-    eat() {
-        console.log(`${this.name} eat something`);
-    }
-    speak() {
-        console.log(`age ${this.name}`);
     }
 }
 
-class Student extends People {
-    constructor (name, age, number) {
-        super(name, age);
-        this.number = number;
+class A extends People {
+    constructor (name, house) {
+        super(name, house);
     }
-    study() {
-        console.log(`${this.name} study`)
+    saySomething() {
+        console.log("i am A");
     }
 }
 
-let tony = new Student("tony", 20, "A1");
-let tom = new Student("tom", 18, "A2");
+class B extends People {
+    constructor (name, house) {
+        super(name, house);
+    }
+    saySomething() {
+        console.log("i am B");
+    }
+}
 
-tony.study();
-console.log(tony)
+let aHouse = new House("beijing");
+
+let a = new A("a", aHouse);
+let b = new B("b");
+
+a.saySomething();
+b.saySomething();
